@@ -20,7 +20,12 @@ class ContactsManagerTest {
             Contact("Jane Smith", "0987654321", "jane@example.com"),
             Contact("Alice Johnson", "5556667777", "alice@example.com"),
             Contact("Bob Brown", "2223334444", "bob@example.com"),
-            // ... other contacts as previously defined
+            Contact("Charlie Green", "7778889990", "charlie@example.com"),
+            Contact("Diana White", "1112223333", "diana@example.com"),
+            Contact("Ethan Black", "4445556666", "ethan@example.com"),
+            Contact("Fiona Gray", "9998887777", "fiona@example.com"),
+            Contact("George Yellow", "6667778888", "george@example.com"),
+            Contact("Hannah Pink", "3334445555", "hannah@example.com")
         )
 
         // Adding initial contacts
@@ -59,8 +64,8 @@ class ContactsManagerTest {
 
     @Test
     fun getContactsByName() {
-        val expectedContact = contacts.first { it.name.startsWith("John") }
-        val retrievedContacts = contactsManager.getContactsByName("John")
+        val expectedContact = contacts.first { it.name.startsWith("John Doe") }
+        val retrievedContacts = contactsManager.getContactsByName("John Doe")
 
         assertTrue(retrievedContacts.contains(expectedContact))
         assertTrue(retrievedContacts.all { it.name.startsWith("John") })

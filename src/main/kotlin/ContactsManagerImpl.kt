@@ -1,27 +1,30 @@
 package org.example
 
 class ContactsManagerImpl : ContactsManager {
+
+    private val contacts = mutableListOf<Contact>()
+
     override fun addContact(name: String, phone: String, email: String) {
-        TODO("Not yet implemented")
+        contacts.add(Contact(name, phone, email))
     }
 
     override fun removeContact(contact: Contact) {
-        TODO("Not yet implemented")
+        contacts.remove(contact)
     }
 
     override fun getAllContacts(): List<Contact> {
-        TODO("Not yet implemented")
+        return contacts
     }
 
     override fun getContactsByName(name: String): List<Contact> {
-        TODO("Not yet implemented")
+        return contacts.filter { it.name == name }
     }
 
     override fun getContactsByFirstLetter(firstLetter: Char): List<Contact> {
-        TODO("Not yet implemented")
+        return contacts.filter { it.name.startsWith(firstLetter) }
     }
 
     override fun isContactExists(contact: Contact): Boolean {
-        TODO("Not yet implemented")
+        return contacts.contains(contact)
     }
 }
