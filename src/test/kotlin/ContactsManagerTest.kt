@@ -59,11 +59,11 @@ class ContactsManagerTest {
 
     @Test
     fun getContactsByName() {
-        val expectedContact = contacts.first { it.name.startsWith("John") }
-        val retrievedContacts = contactsManager.getContactsByName("John")
+        val expectedContact = contacts.first { it.name.startsWith("John Doe") }
+        val retrievedContacts = contactsManager.getContactsByName("John Doe")
 
         assertTrue(retrievedContacts.contains(expectedContact))
-        assertTrue(retrievedContacts.all { it.name.startsWith("John") })
+        assertTrue(retrievedContacts.all { it.name.startsWith("John Doe") })
     }
 
     @Test
